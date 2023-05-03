@@ -6,7 +6,7 @@ import { AppDispatch } from '../../app/store';
 import './LoginPage.scss';
 
 const LoginPage: React.FC = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const dispatch: AppDispatch = useDispatch();
@@ -15,7 +15,7 @@ const LoginPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    await dispatch(login({ email, password }));
+    await dispatch(login({ username, password }));
     navigate('/');
   };
 
@@ -26,8 +26,8 @@ const LoginPage: React.FC = () => {
         <input
           type="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
         <input
