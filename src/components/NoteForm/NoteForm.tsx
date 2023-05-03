@@ -44,7 +44,7 @@ const NoteForm: React.FC<NoteFormProps> = ({ note, onComplete }) => {
         onChange={(e) => setContent(e.target.value)}
         required
       />
-      <button type="submit">{note ? 'Update' : 'Create'} Note</button>
+      <button type="submit">{note ? 'Update' : 'Create'} Note </button>
     </form>
   );
 };

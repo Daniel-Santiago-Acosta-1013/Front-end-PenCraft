@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './app/store';
 import NavBar from './components/Navbar/Navbar';
 import Routes from './routes';
+import "./styles/global.scss"
 
 function App() {
   return (

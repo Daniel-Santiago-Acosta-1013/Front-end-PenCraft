@@ -1,0 +1,54 @@
+// Variables
+$bg-color: #1f2937;
+$text-color: #f1f5f9;
+$border-color: #3f5167;
+$font-family: 'Poppins', sans-serif;
+$mobile-breakpoint: 480px;
+
+// Mixins
+@mixin transition($property, $duration) {
+  transition: $property $duration ease-in-out;
+}
+
+// Navbar
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: $font-family;
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: $text-color;
+
+    &:hover {
+      color: lighten($text-color, 10%);
+    }
+
+    @include transition(color, 0.3s);
+  }
+
+  .navbar-menu {
+    button,
+    a {
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: transparent;
+      border: none;
+      color: $text-color;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        color: lighten($text-color, 10%);
+      }
+
+      @include transition(color, 0.3s);
+    }
+  }
+}

@@ -19,4 +19,14 @@ export const createNote = (noteData: any, token: string) => {
   return instance.post('/notes', noteData, { headers: { Authorization: `Bearer ${token}` } });
 };
 
-// ... Continúa con las funciones para actualizar y eliminar notas.
+export const updateNote = (noteId: string, updatedNoteData: any, token: string) => {
+  return instance.put(`/notes/${noteId}`, updatedNoteData, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+};
+
+export const deleteNote = (noteId: string, token: string) => {
+  return instance.delete(`/notes/${noteId}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+};
