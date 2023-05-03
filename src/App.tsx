@@ -1,18 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './app/store';
 import NavBar from './components/Navbar/Navbar';
 import Routes from './routes';
-import './styles/global.scss';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <Router>
-      <NavBar />
-      <main>
-        <Routes />
-      </main>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <div>
+          <NavBar />
+          <main>
+            <Routes />
+          </main>
+        </div>
+      </Router>
+    </Provider>
   );
-};
+}
 
 export default App;
