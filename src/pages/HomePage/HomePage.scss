@@ -1,0 +1,49 @@
+// Variables
+$bg-color: #1f2937;
+$text-color: #f1f5f9;
+$border-color: #3f5167;
+$font-family: "Poppins", sans-serif;
+$mobile-breakpoint: 480px;
+
+// Mixins
+@mixin transition($property, $duration) {
+  transition: $property $duration ease-in-out;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: $font-family;
+  padding: 2rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+
+    @media (max-width: $mobile-breakpoint) {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+
+    @media (max-width: $mobile-breakpoint) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+  }
+}
